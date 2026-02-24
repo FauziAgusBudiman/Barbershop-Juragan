@@ -3,18 +3,20 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="text-center text-white mb-5" style="padding: 120px 0;">
-    <h1 class="display-4 fw-bold">
-        Tampil Percaya Diri Dimulai Dari <span style="color:#e10600;">Potongan Rambut Terbaik</span>
-    </h1>
-    <!-- <p class="lead text-secondary">
-        Barber Juragan menghadirkan layanan haircut & grooming profesional 
-        dengan sentuhan modern dan harga terjangkau.
-    </p> -->
-    <a href="/services" class="btn btn-red px-4 py-2 mt-3">
-        Lihat Layanan
-    </a>
-</section>
+<section class="hero-section text-center text-white d-flex align-items-center">
+
+    <div class="container">
+        <h1 class="display-4 fw-bold">
+            Tampil Percaya Diri Dimulai Dari 
+            <span style="color:#e10600;">Potongan Rambut Terbaik</span>
+        </h1>
+
+        <a href="#services" class="btn btn-red px-4 py-2 mt-3">
+            Lihat Layanan
+        </a>
+    </div>
+
+</section>>
 
 <!-- Featured Services -->
 <section class="mb-5">
@@ -56,7 +58,7 @@
 </section>
 
 <!-- About / Intro -->
-<section class="mb-5">
+<!-- <section class="mb-5">
     <div class="p-5 bg-dark rounded">
         <h2 class="fw-bold text-white mb-3">Barbershop Profesional di Cianjur</h2>
         <p class="text-secondary">
@@ -65,43 +67,8 @@
             suasana nyaman, dan hasil potongan yang presisi sesuai gaya Anda.
         </p>
     </div>
-</section>
+</section>  -->
 
-<!-- Location -->
-<section class="mb-5">
-    <h2 class="fw-bold text-white mb-3">Lokasi Kami</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card card-dark p-4 text-white">
-                <h5 class="fw-bold">Barber Juragan – Cianjur</h5>
-                <p class="text-secondary mb-2">
-                    📍 Jln. Adi Sucipta, Cianjur  
-                    <br>(Depan Polsek Cianjur Kota)
-                </p>
-                <p class="text-secondary mb-2">
-                    🕒 Buka Setiap Hari  
-                    10.00 – 22.00 WIB
-                </p>
-                <p class="text-secondary">
-                    📞 08XX-XXXX-XXXX
-                </p>
-                <a href="/contact" class="btn btn-red mt-2">
-                    Hubungi Sekarang
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Reservation -->
-<!-- <section class="text-center mb-5">
-    <p class="lead text-secondary">
-        Siap tampil lebih percaya diri?
-    </p>
-    <a href="/contact" class="btn btn-red btn-lg">
-        Reservasi Sekarang
-    </a>
-</section> -->
 
 <style>
 .service-card {
