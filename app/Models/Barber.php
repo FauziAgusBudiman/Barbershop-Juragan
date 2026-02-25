@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barber extends Model
 {
-    //
+    protected $fillable = [
+        'name',
+        'specialist',
+        'photo',
+    ];
 }

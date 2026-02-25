@@ -24,17 +24,19 @@ class BarberController extends Controller
         $request->validate([
             'name' => 'required',
             'specialist' => 'required',
-            'photo' => 'required|image|mimes:jpg,jpeg,png|max:2048'
+            'photo' => 'required|file|max:2048',
         ]);
 
-        $photo = $request->file('photo');
-        $filename = time().'.'.$photo->getClientOriginalExtension();
-        $photo->move(public_path('uploads'), $filename);
+        $photoFile = $request->file('photo');
+        $photoName = time().'_'.$photoFile->getClientOriginalName();
+        $photoFile->move(public_path('images'), $photoName);
+
+        $photo = $photoName;
 
         Barber::create([
             'name' => $request->name,
             'specialist' => $request->specialist,
-            'photo' => $filename
+            'photo' => $photo
         ]);
 
         return redirect()->route('barbers.index')
@@ -51,19 +53,19 @@ class BarberController extends Controller
         $request->validate([
             'name' => 'required',
             'specialist' => 'required',
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'photo' => 'required|file|max:2048',
         ]);
 
         if ($request->hasFile('photo')) {
 
             // hapus foto lama
-            if (file_exists(public_path('uploads/'.$barber->photo))) {
-                unlink(public_path('uploads/'.$barber->photo));
+            if (file_exists(public_path('images/'.$barber->photo))) {
+                unlink(public_path('images/'.$barber->photo));
             }
 
             $photo = $request->file('photo');
             $filename = time().'.'.$photo->getClientOriginalExtension();
-            $photo->move(public_path('uploads'), $filename);
+            $photo->move(public_path('images'), $filename);
 
             $barber->photo = $filename;
         }
